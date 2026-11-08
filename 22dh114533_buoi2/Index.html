@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT Training Center</title>
+
+    <link rel="stylesheet" href="styleITTrainingCenter.css">
+
+</head>
+
+<body>
+
+
+
+    <!-- 1. HEADER -->
+
+    <header>
+
+        <div class="brand">
+
+            <div class="logo">
+
+                <img src="images/logo.png" alt="Logo IT Training Center">
+
+            </div>
+
+            <div class="brand-text">
+
+                <h1>IT Training Center</h1>
+
+                <p>Learn Technology – Build Your Future</p>
+
+            </div>
+
+        </div>
+
+        <div class="header-search">
+
+            <input type="text" placeholder="Search courses...">
+
+        </div>
+
+    </header>
+
+
+
+    <!-- 2. NAVIGATION -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#courses">Courses</a>
+
+        <a href="#tuition">Tuition</a>
+
+        <a href="#registration">Registration</a>
+
+    </nav>
+
+
+
+    <!-- 3. BANNER -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h2>Professional IT Training Programs</h2>
+
+            <p>HTML · CSS · JavaScript · ASP.NET MVC · Database</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 4, 5 MAIN LAYOUT -->
+
+    <main class="main-container">
+
+
+
+        <!-- Menu trái -->
+
+        <aside class="left-menu">
+
+            <h3>Menu</h3>
+
+            <a href="#home">Home</a>
+
+            <a href="#courses">Course List</a>
+
+            <a href="#tuition">Tuition Fee</a>
+
+            <a href="#registration" class="btn-register">Register</a>
+
+        </aside>
+
+
+
+        <!-- Main Content -->
+
+        <section class="content-area">
+
+
+
+            <!-- 5.1 Welcome-->
+
+            <article id="home" class="welcome-box">
+
+                <h2>Welcome</h2>
+
+                <p>Welcome to IT Training Center. We provide professional information technology training courses for students.</p>
+
+            </article>
+
+
+
+            <!-- 5.2 Available Courses – Course Cards -->
+
+            <article id="courses" class="courses-section">
+
+                <h2>Available Courses</h2>
+
+                <div class="course-grid">
+
+                    <div class="course-card">
+
+                        <img src="images/course-html.png" alt="HTML & CSS">
+
+                        <h3>HTML & CSS</h3>
+
+                        <p>Build modern and responsive web pages.</p>
+
+                        <a href="#" class="btn-learn">Learn More</a>
+
+                    </div>
+
+                    <div class="course-card">
+
+                        <img src="images/course-js.png" alt="JavaScript">
+
+                        <h3>JavaScript</h3>
+
+                        <p>Make your website interactive and dynamic.</p>
+
+                        <a href="#" class="btn-learn">Learn More</a>
+
+                    </div>
+
+                    <div class="course-card">
+
+                        <img src="images/course-net.png" alt="ASP.NET MVC">
+
+                        <h3>ASP.NET MVC</h3>
+
+                        <p>Build scalable web applications with ASP.NET MVC.</p>
+
+                        <a href="#" class="btn-learn">Learn More</a>
+
+                    </div>
+
+                    <div class="course-card">
+
+                        <img src="images/course-db.png" alt="Database">
+
+                        <h3>Database</h3>
+
+                        <p>Work with SQL and real-world databases.</p>
+
+                        <a href="#" class="btn-learn">Learn More</a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 5.3 Tuition Fee -->
+
+            <article id="tuition" class="tuition-section">
+
+                <h2>Course List</h2>
+
+                <!-- Table-->
+
+                <table class="tuition-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Course Name</th>
+
+                            <th>Duration</th>
+
+                            <th>Tuition Fee</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1</td>
+
+                            <td>HTML & CSS</td>
+
+                            <td>4 Weeks</td>
+
+                            <td>$100</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2</td>
+
+                            <td>JavaScript</td>
+
+                            <td>6 Weeks</td>
+
+                            <td>$150</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3</td>
+
+                            <td>ASP.NET MVC</td>
+
+                            <td>8 Weeks</td>
+
+                            <td>$200</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>4</td>
+
+                            <td>Database</td>
+
+                            <td>6 Weeks</td>
+
+                            <td>$150</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+            <!-- 5.4 Course Registration -->
+
+            <article id="registration" class="registration-section">
+
+                <h2>Course Registration</h2>
+
+                <form class="registration-form">
+
+                    <div class="form-group">
+
+                        <label for="fullname">Full Name:</label>
+
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email">Email:</label>
+
+                        <input type="email" id="email" placeholder="Enter your email" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="phone">Phone Number:</label>
+
+                        <input type="tel" id="phone" placeholder="10-digit phone number" pattern="[0-9]{10}" required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="course-select">Course:</label>
+
+                        <select id="course-select" required>
+
+                            <option value="">Select Course</option>
+
+                            <option value="html">HTML & CSS</option>
+
+                            <option value="js">JavaScript</option>
+
+                            <option value="net">ASP.NET MVC</option>
+
+                            <option value="db">Database</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Learning Mode:</label>
+
+                        <div class="radio-group">
+
+                            <label><input type="radio" name="mode" value="online" checked> Online</label>
+
+                            <label><input type="radio" name="mode" value="offline"> Offline</label>
+
+                            <label><input type="radio" name="mode" value="hybrid"> Hybrid</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Class Schedule:</label>
+
+                        <div class="checkbox-group">
+
+                            <label><input type="checkbox" name="schedule" value="morning"> Morning</label>
+
+                            <label><input type="checkbox" name="schedule" value="afternoon"> Afternoon</label>
+
+                            <label><input type="checkbox" name="schedule" value="evening"> Evening</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-action">
+
+                        <button type="submit" class="btn-submit">Register Now</button>
+
+                    </div>
+
+                </form>
+
+            </article>
+
+            <!-- 5.5. Student Reviews -->
+
+            <article class="reviews-section">
+
+                <h2>Student Reviews</h2>
+
+                <div class="reviews-grid">
+
+                    <article class="review-card">
+
+                        <img src="images/avatar1.png" alt="Nguyen Van B">
+
+                        <h3>Charlie Puth</h3>
+
+                        <p class="stars">★★★★★</p>
+
+                        <p class="review-text">The instructors are enthusiastic and provide excellent support to the students.</p>
+
+                    </article>
+
+                    <article class="review-card">
+
+                        <img src="images/avatar2.png" alt="Tran Thi C">
+
+                        <h3>Tran Minh Hieu</h3>
+
+                        <p class="stars">★★★★★</p>
+
+                        <p class="review-text">The course is very practical and easy to understand.</p>
+
+                    </article>
+
+                    <article class="review-card">
+
+                        <img src="images/avatar3.png" alt="Le Minh D">
+
+                        <h3>Son Tung MTP</h3>
+
+                        <p class="stars">★★★★★</p>
+
+                        <p class="review-text">Great training program with helpful teachers and good facilities.</p>
+
+                    </article>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- right Aside-->
+
+        <aside class="right-aside">
+
+            <div class="side-box">
+
+                <h3>Available Courses</h3>
+
+                <ul class="side-list">
+
+                    <li><a href="#courses">HTML & CSS</a></li>
+
+                    <li><a href="#courses">Javascript</a></li>
+
+                    <li><a href="#courses">ASPNET MVC</a></li>
+
+                </ul>
+
+                <a href="#registration" class="side-register-btn">Register</a>
+
+            </div>
+
+
+
+            <div class="side-box promo-box">
+
+                <img src="images/promo-banner.png" alt="Promo">
+
+                <h4>Upgradable Your Skills Today!</h4>
+
+                <p>Get hands-on courses and get career-ready.</p>
+
+                <a href="#courses" class="btn-learn">Learn More</a>
+
+            </div>
+
+
+
+            <div class="side-box benefits-box">
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">👨‍🏫</span>
+
+                    <div>
+
+                        <strong>Experienced Instructors</strong>
+
+                        <p>Learn from industry experts</p>
+
+                    </div>
+
+                </div>
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">📅</span>
+
+                    <div>
+
+                        <strong>Flexible Schedule</strong>
+
+                        <p>Online, Offline or Hybrid</p>
+
+                    </div>
+
+                </div>
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">📜</span>
+
+                    <div>
+
+                        <strong>Certificate Provided</strong>
+
+                        <p>Get recognized</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="side-box slogan-box">
+
+                <h3>Your Future Starts Here</h3>
+
+                <p>Skills for a Brighter Tomorrow</p>
+
+            </div>
+
+        </aside>
+
+
+
+    </main>
+
+
+
+    <!-- 7. FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>Email: vanvinhthaihoan@gmail.com</p>
+
+            <p>Phone: 0123456789</p>
+
+            <p>Address: 528 Su Van Hanh, Ho Chi Minh City</p>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>Copyright © 2026 - IT Training Center</p>
+
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+</html>

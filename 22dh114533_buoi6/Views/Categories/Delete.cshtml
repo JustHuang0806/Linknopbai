@@ -1,0 +1,4 @@
+﻿@model DBSportStore.Models.Category
+@{ ViewBag.Title = "Xóa danh mục"; Layout = "~/Views/Shared/_StoreLayout.cshtml"; }
+<h2>Xóa danh mục</h2><p>Bạn có chắc muốn xóa danh mục <strong>@Model.CategoryName</strong>?</p>
+@using (Html.BeginForm("Delete", "Categories", new { id = Model.CategoryID }, FormMethod.Post)) { @Html.AntiForgeryToken() <button type="submit" class="btn btn-danger">Xác nhận xóa</button> @Html.ActionLink("Quay lại", "Index") }

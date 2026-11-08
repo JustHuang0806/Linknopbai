@@ -1,0 +1,7 @@
+@model IEnumerable<DBSportStore.Models.Category>
+@{ ViewBag.Title = "Quản lý danh mục"; Layout = "~/Views/Shared/_StoreLayout.cshtml"; }
+<h2>Quản lý danh mục</h2>
+<p>@Html.ActionLink("Thêm danh mục", "Create")</p>
+<table class="table table-striped"><tr><th>Tên danh mục</th><th>Thao tác</th></tr>
+@foreach (var item in Model) { <tr><td>@item.CategoryName</td><td>@Html.ActionLink("Sửa", "Edit", new { id = item.CategoryID }) | @Html.ActionLink("Chi tiết", "Details", new { id = item.CategoryID }) | @Html.ActionLink("Xóa", "Delete", new { id = item.CategoryID })</td></tr> }
+</table>

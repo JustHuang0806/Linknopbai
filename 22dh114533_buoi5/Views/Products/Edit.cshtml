@@ -1,0 +1,71 @@
+﻿@model DBSportStore.Models.Product
+@{
+    ViewBag.Title = "Cập nhật sản phẩm";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<h2>Cập nhật sản phẩm</h2>
+<h4>Thông tin sản phẩm</h4>
+<hr />
+
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ProductID)
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(m => m.ProductName, "Tên sản phẩm", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })@Html.ValidationMessageFor(m => m.ProductName, "", new { @class = "text-danger" })</div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description, "Mô tả", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 3 })@Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })</div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CategoryID, "Danh mục", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.DropDownList("CategoryID", null, "-- Chọn danh mục --", new { @class = "form-control" })@Html.ValidationMessageFor(m => m.CategoryID, "", new { @class = "text-danger" })</div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Price, "Đơn giá", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.TextBoxFor(m => m.Price, "{0:0}", new { @class = "form-control", type = "number", min = "0", step = "1" })@Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="imageFile">Hình sản phẩm</label>
+            <div class="col-md-10">
+                @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+                {
+                    <p>Ảnh hiện tại:</p>
+                    <img src="@Url.Content("~/Content/images/" + Model.ImageUrl)" alt="@Model.ProductName" style="width:180px;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px" />
+                }
+                <input type="file" id="imageFile" name="imageFile" accept=".jpg,.jpeg,.png" onchange="previewNewImage(event)" class="form-control" />
+                @Html.ValidationMessage("imageFile", "", new { @class = "text-danger" })
+                <small class="text-muted">Không chọn file mới thì giữ nguyên ảnh hiện tại. Tối đa 2 MB.</small>
+                <img id="newImagePreview" alt="Ảnh mới xem trước" style="display:none;width:180px;height:180px;object-fit:cover;margin-top:10px;border-radius:10px" />
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.StockQuantity, "Số lượng tồn kho", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.TextBoxFor(m => m.StockQuantity, new { @class = "form-control", type = "number", min = "0" })@Html.ValidationMessageFor(m => m.StockQuantity, "", new { @class = "text-danger" })</div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsActive, "Trạng thái", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">@Html.CheckBoxFor(m => m.IsActive) Đang bán</div>
+        </div>
+        <div class="form-group"><div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu thay đổi" class="btn btn-primary" /> |
+            @Html.ActionLink("Quay lại danh sách", "Index")
+        </div></div>
+    </div>
+}
+
+<script>
+    function previewNewImage(event) {
+        var file = event.target.files && event.target.files[0];
+        var preview = document.getElementById("newImagePreview");
+        if (!file) { preview.src = ""; preview.style.display = "none"; return; }
+        var reader = new FileReader();
+        reader.onload = function (e) { preview.src = e.target.result; preview.style.display = "block"; };
+        reader.readAsDataURL(file);
+    }
+</script>

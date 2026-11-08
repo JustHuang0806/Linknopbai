@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Training Center</title>
+    <link rel="stylesheet" href="styleITTrainingCenter.css">
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="brand">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo IT Training Center">
+            </div>
+            <div class="brand-text">
+                <h1>IT Training Center</h1>
+                <p>Professional IT Education</p>
+            </div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="Search courses...">
+        </div>
+    </header>
+
+    <!-- 2. NAVIGATION -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#tuition">Tuition</a>
+        <a href="#registration">Register</a>
+        <a href="#reviews">Reviews</a>
+    </nav>
+
+    <!-- 3. BANNER -->
+    <section class="banner">
+        <h2>Unlock Your Potential in Tech</h2>
+        <p>Join our practical hands-on courses today!</p>
+    </section>
+
+    <!-- 4. MAIN CONTAINER -->
+    <div class="main-container">
+        <!-- Left Menu -->
+        <aside class="left-menu">
+            <h3>Quick Links</h3>
+            <a href="#">Frontend Development</a>
+            <a href="#">Backend Development</a>
+            <a href="#">Database Systems</a>
+            <a href="#">Mobile Apps</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <!-- Welcome Section (Demo) -->
+            <section class="welcome">
+                <h2 id="welcome-title"></h2>
+                <p id="welcome-message"></p>
+            </section>
+
+            <!-- Available Courses (Bài 1) -->
+            <section id="courses">
+                <h2>Available Courses</h2>
+                <div class="course-grid">
+                    <article class="course-card">
+                        <img src="images/course-html.png" alt="Course 1">
+                        <h3 class="course-name"></h3>
+                        <a href="#" class="btn-learn">Learn More</a>
+                    </article>
+                    <article class="course-card">
+                        <img src="images/course-js.png" alt="Course 2">
+                        <h3 class="course-name"></h3>
+                        <a href="#" class="btn-learn">Learn More</a>
+                    </article>
+                    <article class="course-card">
+                        <img src="images/course-net.png" alt="Course 3">
+                        <h3 class="course-name"></h3>
+                        <a href="#" class="btn-learn">Learn More</a>
+                    </article>
+                    <article class="course-card">
+                        <img src="images/course-db.png" alt="Course 4">
+                        <h3 class="course-name"></h3>
+                        <a href="#" class="btn-learn">Learn More</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Course Detail Lookup (Bài 3) -->
+            <section style="margin: 20px 0;">
+                <h2>Course Detail Lookup</h2>
+                <div style="margin-bottom: 10px;">
+                    <label>Chọn khóa học để xem chi tiết:</label><br>
+                    <select id="select-course" style="width: 100%; max-width: 300px; padding: 6px; margin-top: 5px;">
+                        <option value="html">HTML & CSS</option>
+                        <option value="js" selected>JavaScript</option>
+                        <option value="net">ASP.NET Core MVC</option>
+                        <option value="db">Database Systems</option>
+                    </select>
+                </div>
+                <button type="button" onclick="showCourseDetail()" style="padding: 8px 15px; cursor: pointer; background: #0f3460; color: #fff; border: none; border-radius: 4px;">
+                    View Course Info
+                </button>
+                <div id="course-detail" style="margin-top: 10px;"></div>
+            </section>
+
+            <!-- Course Registration (Bài 4) -->
+            <section id="registration" style="margin: 20px 0;">
+                <h2>Course Registration</h2>
+                <form id="regForm">
+                    <div style="margin-bottom: 10px;">
+                        <label>Full Name:</label><br>
+                        <input type="text" id="fullName" required style="width: 100%; padding: 6px;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Email:</label><br>
+                        <input type="email" id="email" required style="width: 100%; padding: 6px;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Phone:</label><br>
+                        <input type="tel" id="phone" pattern="[0-9]{10}" required style="width: 100%; padding: 6px;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Select Course:</label><br>
+                        <select id="course" required style="width: 100%; padding: 6px;">
+                            <option value="">-- Chọn khóa học --</option>
+                            <option value="HTML & CSS">HTML & CSS</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="ASP.NET MVC">ASP.NET MVC</option>
+                            <option value="Database">Database</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label>Learning Mode:</label><br>
+                        <input type="radio" name="learningMode" value="Online"> Online
+                        <input type="radio" name="learningMode" value="Offline" style="margin-left: 15px;"> Offline
+                        <input type="radio" name="learningMode" value="Hybrid" style="margin-left: 15px;"> Hybrid
+                    </div>
+                    <button type="button" onclick="registerCourse()" style="padding: 10px 20px; background: #0d6efd; color: white; border: none; cursor: pointer;">
+                        Register Now
+                    </button>
+                </form>
+                <div id="registration-result"></div>
+            </section>
+            <!-- DOM Reading Demo (Bài 7) -->
+            <section style="margin: 20px 0; background: #fff3cd; padding: 15px; border-radius: 5px;">
+                <h2>DOM Reading Demo</h2>
+                <div id="demo-content" style="margin: 10px 0; background: #fff; padding: 10px;">
+                    HTML
+                    <span style="display:none">CSS</span>
+                    JavaScript
+                </div>
+                <button type="button" onclick="showInnerHTML()">innerHTML</button>
+                <button type="button" onclick="showInnerText()">innerText</button>
+                <button type="button" onclick="showTextContent()">textContent</button>
+                <pre id="content-result" style="margin-top: 10px; background: #222; color: #fff; padding: 10px; border-radius: 4px;"></pre>
+            </section>
+            <!-- Student Reviews (Bài 5 & A mở rộng) -->
+            <section id="reviews" style="margin: 20px 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2>Student Reviews</h2>
+                    <button type="button" onclick="toggleReviews()" id="btn-toggle-reviews" style="padding: 6px 12px; cursor: pointer; background: #0f3460; color: #fff; border: none; border-radius: 4px;">
+                        Hide Reviews
+                    </button>
+                </div>
+                <div id="reviews-container" class="review-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+                    <div class="review-card" style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <h4 class="review-name"></h4>
+                        <p>Khóa học rất thực tế và dễ hiểu!</p>
+                    </div>
+                    <div class="review-card" style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <h4 class="review-name"></h4>
+                        <p>Giảng viên nhiệt tình, hỗ trợ tận tâm.</p>
+                    </div>
+                    <div class="review-card" style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <h4 class="review-name"></h4>
+                        <p>Rất hữu ích cho công việc thực tế sau khi ra trường.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Aside (Bài 2) -->
+        <aside class="right-aside">
+            <div class="aside-box">
+                <h3>Available Courses</h3>
+                <ul id="quick-course-list"></ul>
+            </div>
+            <div class="promo-box">
+                <h3>Special Offer</h3>
+                <p>Get 20% off when registering for 2 courses!</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 5. FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 IT Training Center. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script src="appITTrainingCenter.js"></script>
+</body>
+</html>

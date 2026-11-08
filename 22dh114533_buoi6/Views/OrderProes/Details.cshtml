@@ -1,0 +1,5 @@
+﻿@model DBSportStore.Models.OrderPro
+@{ ViewBag.Title = "Chi tiết đơn hàng"; Layout = "~/Views/Shared/_StoreLayout.cshtml"; }
+<h2>Chi tiết đơn hàng</h2>
+<dl class="dl-horizontal"><dt>Mã đơn</dt><dd>@Model.OrderID</dd><dt>Ngày đặt</dt><dd>@Model.OrderDate.ToString("dd/MM/yyyy HH:mm")</dd><dt>Khách hàng</dt><dd>@(Model.Customer == null ? "" : Model.Customer.FullName)</dd><dt>Địa chỉ giao hàng</dt><dd>@Model.ShippingAddress</dd><dt>Tổng tiền</dt><dd>@Model.TotalAmount.ToString("#,##0") đ</dd><dt>Trạng thái</dt><dd>@Model.Status</dd></dl>
+<p>@Html.ActionLink("Sửa", "Edit", new { id = Model.OrderID }) | @Html.ActionLink("Quay lại", "Index")</p>
