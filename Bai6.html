@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bài 6 — Homepage cá nhân</title>
+    <style>
+        body {
+            font: 16px/1.6 Arial, sans-serif;
+            background: #f2f6fa;
+            color: #1e3049;
+            margin: 0;
+        }
+
+        .wrap {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 18px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 25px;
+            margin: 16px 0;
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+            .intro img {
+                width: 100%;
+                border-radius: 12px;
+            }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        a {
+            color: #087f70;
+        }
+
+        @media (max-width: 600px) {
+            .intro {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <a href="index.html">← Trang tổng hợp</a>
+
+        <section class="card intro">
+            <img src="assets/portrait.svg" alt="Hình chân dung cá nhân minh họa">
+            <div>
+                <h1>Xin chào, mình là sinh viên Công nghệ thông tin</h1>
+                <p>
+                    Mình yêu thích công nghệ và đang học cách xây dựng website.
+                    Mục tiêu là nắm vững nền tảng lập trình và tạo ra sản phẩm hữu ích.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Kỹ năng mềm</h2>
+            <ul>
+                <li>Giao tiếp</li>
+                <li>Làm việc nhóm</li>
+                <li>Quản lý thời gian</li>
+                <li>Tự học</li>
+            </ul>
+
+            <h2>Kỹ năng chuyên môn</h2>
+            <ul>
+                <li>HTML và CSS cơ bản</li>
+                <li>C# cơ bản</li>
+                <li>Cơ sở dữ liệu</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Trang yêu thích</h2>
+            <p>
+                <a href="https://tuoitre.vn/">Tuổi Trẻ</a> ·
+                <a href="https://developer.mozilla.org/vi/">MDN</a> ·
+                <a href="https://www.w3schools.com/">W3Schools</a>
+            </p>
+
+            <h2>Sở thích</h2>
+            <ul>
+                <li>Đọc sách</li>
+                <li>Nghe nhạc</li>
+                <li>Chơi thể thao</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Bảng điểm minh họa</h2>
+            <table>
+                <tr><th>Môn học</th><th>Tín chỉ</th><th>Điểm</th></tr>
+                <tr><td>Lập trình Web</td><td>3</td><td>8.5</td></tr>
+                <tr><td>Cơ sở dữ liệu</td><td>3</td><td>8.0</td></tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

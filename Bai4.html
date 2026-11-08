@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bài 4 — Bảng</title>
+    <style>
+        body {
+            font: 16px/1.5 Arial, sans-serif;
+            background: #f3f6fa;
+            color: #20314b;
+            padding: 24px;
+        }
+
+        main {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .panel {
+            background: white;
+            padding: 22px;
+            margin: 18px 0;
+            border-radius: 12px;
+            overflow: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0 26px;
+        }
+
+        td, th {
+            border: 1px solid #66758a;
+            padding: 11px;
+            text-align: center;
+        }
+
+        caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #087f70;
+        }
+
+        .student td {
+            text-align: left;
+        }
+
+        .student img {
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a href="index.html">← Trang chủ</a>
+        <h1>Bài 4: Bảng và gộp ô</h1>
+
+        <section class="panel">
+            <h2>Thông tin sinh viên</h2>
+
+            <table class="student">
+                <caption>THÔNG TIN SINH VIÊN</caption>
+                <tr>
+                    <td rowspan="4">
+                        <img src="assets/portrait.svg" alt="Ảnh chân dung minh họa">
+                    </td>
+                    <td>HỌ VÀ TÊN</td>
+                    <td colspan="3"><b>Nguyễn Văn An</b></td>
+                </tr>
+                <tr>
+                    <td>MÃ SỐ SINH VIÊN</td>
+                    <td><b>19DH11010</b></td>
+                    <td>GIỚI TÍNH</td>
+                    <td><b>NAM</b></td>
+                </tr>
+                <tr>
+                    <td>EMAIL</td>
+                    <td>an@example.com</td>
+                    <td>SỐ ĐIỆN THOẠI</td>
+                    <td>0122333444</td>
+                </tr>
+                <tr>
+                    <td>SỞ THÍCH</td>
+                    <td colspan="3"><b>VIẾT CHƯƠNG TRÌNH</b></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Colspan và rowspan</h2>
+
+            <table>
+                <caption>a. Gộp ô 2–3–4</caption>
+                <tr><td>1</td><td colspan="3">2–3–4</td></tr>
+                <tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+            </table>
+
+            <table>
+                <caption>b. Gộp ô 9–14–19</caption>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                <tr><td>6</td><td>7</td><td>8</td><td rowspan="3">9–14–19</td><td>10</td></tr>
+                <tr><td>11</td><td>12</td><td>13</td><td>15</td></tr>
+                <tr><td>16</td><td>17</td><td>18</td><td>20</td></tr>
+            </table>
+
+            <table>
+                <caption>c. Gộp ô 1–2</caption>
+                <tr><td colspan="2">1–2</td><td>3</td><td>4</td></tr>
+                <tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+            </table>
+
+            <table>
+                <caption>c. Gộp ô 18–23</caption>
+                <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                <tr><td colspan="6">18–23</td></tr>
+                <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+            </table>
+
+            <table>
+                <caption>c. Gộp ô 9–10–14–15</caption>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                <tr><td>6</td><td>7</td><td>8</td><td rowspan="2" colspan="2">9–10–14–15</td></tr>
+                <tr><td>11</td><td>12</td><td>13</td></tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
