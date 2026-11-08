@@ -1,0 +1,7 @@
+@model DBSportStore.Models.Cart
+@{
+    Layout = null;
+}
+<a href="@Url.Action("ShowCart", "ShoppingCart")">
+    Giỏ hàng (@Model.TotalQuantity()) - @Model.TotalMoney().ToString("#,##0") đ
+</a>

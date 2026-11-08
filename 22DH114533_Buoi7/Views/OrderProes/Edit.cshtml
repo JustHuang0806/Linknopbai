@@ -1,0 +1,14 @@
+﻿@model DBSportStore.Models.OrderPro
+@{ ViewBag.Title = "Sửa đơn hàng"; Layout = "~/Views/Shared/_StoreLayout.cshtml"; }
+<h2>Sửa đơn hàng</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.OrderID)
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">@Html.LabelFor(m => m.CustomerID, "Khách hàng") @Html.DropDownList("CustomerID", null, "-- Chọn khách hàng --", new { @class = "form-control" }) @Html.ValidationMessageFor(m => m.CustomerID, "", new { @class = "text-danger" })</div>
+    <div class="form-group">@Html.LabelFor(m => m.OrderDate, "Ngày đặt") @Html.TextBoxFor(m => m.OrderDate, "{0:yyyy-MM-ddTHH:mm}", new { @class = "form-control", type = "datetime-local" })</div>
+    <div class="form-group">@Html.LabelFor(m => m.ShippingAddress, "Địa chỉ giao hàng") @Html.TextBoxFor(m => m.ShippingAddress, new { @class = "form-control" }) @Html.ValidationMessageFor(m => m.ShippingAddress, "", new { @class = "text-danger" })</div>
+    <div class="form-group">@Html.LabelFor(m => m.TotalAmount, "Tổng tiền") @Html.TextBoxFor(m => m.TotalAmount, "{0:0}", new { @class = "form-control", type = "number", min = "0", step = "1" }) @Html.ValidationMessageFor(m => m.TotalAmount, "", new { @class = "text-danger" })</div>
+    <div class="form-group">@Html.LabelFor(m => m.Status, "Trạng thái") @Html.TextBoxFor(m => m.Status, new { @class = "form-control" }) @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })</div>
+    <button type="submit" class="btn btn-primary">Lưu thay đổi</button> @Html.ActionLink("Quay lại", "Index")
+}
